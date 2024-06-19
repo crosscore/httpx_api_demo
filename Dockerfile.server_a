@@ -1,0 +1,10 @@
+# Dockerfile.server_a
+FROM python:3.11-slim
+
+WORKDIR /app
+
+COPY send_request.py /app/send_request.py
+
+RUN pip install httpx[http2]
+
+CMD ["tail", "-f", "/dev/null"]
